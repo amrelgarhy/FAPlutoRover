@@ -17,6 +17,73 @@ namespace FAPlutoRover.Test
         }
 
 
+        [TestMethod]
+        public void GridSurface_BackwardX_KeepInPlace()
+        {
+            var gridSurface = new GridSurface(100);
+
+            gridSurface.StepXBackward();
+
+            Assert.AreEqual(0, gridSurface.X);
+            Assert.AreEqual(0, gridSurface.Y);
+        }
+
+        [TestMethod]
+        public void GridSurface_ForwardX_X1()
+        {
+            var gridSurface = new GridSurface(100);
+
+            gridSurface.StepXForward();
+
+            Assert.AreEqual(1, gridSurface.X);
+            Assert.AreEqual(0, gridSurface.Y);
+        }
+
+        [TestMethod]
+        public void GridSurfaceSize1_ForwardTwiceX_X1()
+        {
+            var gridSurface = new GridSurface(1);
+
+            gridSurface.StepXForward();
+            gridSurface.StepXForward();
+
+            Assert.AreEqual(1, gridSurface.X);
+            Assert.AreEqual(0, gridSurface.Y);
+        }
+
+        [TestMethod]
+        public void GridSurface_BackwardY_KeepInPlace()
+        {
+            var gridSurface = new GridSurface(100);
+
+            gridSurface.StepYBackward();
+
+            Assert.AreEqual(0, gridSurface.X);
+            Assert.AreEqual(0, gridSurface.Y);
+        }
+
+        [TestMethod]
+        public void GridSurface_ForwardY_Y1()
+        {
+            var gridSurface = new GridSurface(100);
+
+            gridSurface.StepYForward();
+
+            Assert.AreEqual(0, gridSurface.X);
+            Assert.AreEqual(1, gridSurface.Y);
+        }
+
+        [TestMethod]
+        public void GridSurfaceSize1_ForwardTwiceY_Y1()
+        {
+            var gridSurface = new GridSurface(1);
+
+            gridSurface.StepYForward();
+            gridSurface.StepYForward();
+
+            Assert.AreEqual(0, gridSurface.X);
+            Assert.AreEqual(1, gridSurface.Y);
+        }
         #endregion
 
     }

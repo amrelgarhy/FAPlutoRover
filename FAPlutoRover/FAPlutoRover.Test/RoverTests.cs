@@ -51,8 +51,8 @@ namespace FAPlutoRover.Test
 
             rover.Forward();
 
-            Assert.AreEqual(rover.X, 0);
-            Assert.AreEqual(rover.Y, 1);
+            Assert.AreEqual(0, rover.X);
+            Assert.AreEqual(1, rover.Y);
         }
 
         [TestMethod]
@@ -63,8 +63,8 @@ namespace FAPlutoRover.Test
             rover.Forward();
             rover.TurnLeft();
 
-            Assert.AreEqual(rover.X, 0);
-            Assert.AreEqual(rover.Y, 1);
+            Assert.AreEqual(0, rover.X);
+            Assert.AreEqual(1, rover.Y);
             Assert.IsInstanceOfType(rover.Direction, typeof(West));
         }
 
@@ -76,8 +76,8 @@ namespace FAPlutoRover.Test
             rover.Forward();
             rover.Backward();
 
-            Assert.AreEqual(rover.X, 0);
-            Assert.AreEqual(rover.Y, 0);
+            Assert.AreEqual(0, rover.X);
+            Assert.AreEqual(0, rover.Y);
             Assert.IsInstanceOfType(rover.Direction, typeof(North));
         }
 
@@ -90,8 +90,8 @@ namespace FAPlutoRover.Test
             rover.TurnLeft();
             rover.Backward();
 
-            Assert.AreEqual(rover.X, 1);
-            Assert.AreEqual(rover.Y, 0);
+            Assert.AreEqual(1, rover.X);
+            Assert.AreEqual(0, rover.Y);
             Assert.IsInstanceOfType(rover.Direction, typeof(West));
         }
 

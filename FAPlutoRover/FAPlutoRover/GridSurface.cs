@@ -10,7 +10,7 @@ namespace FAPlutoRover
     {
         public int X { get; private set; }
         public int Y { get; private set; }
-        
+
         private readonly int _size;
 
 
@@ -23,22 +23,26 @@ namespace FAPlutoRover
 
         public void StepYBackward()
         {
-            Y--;
+            if (Y > 0)
+                Y--;
         }
 
         public void StepYForward()
         {
-            Y++;
+            if (Y < _size)
+                Y++;
         }
 
         public void StepXForward()
         {
-            X++;
+            if (X < _size)
+                X++;
         }
 
         public void StepXBackward()
         {
-            X--;
+            if (X > 0)
+                X--;
         }
     }
 }
