@@ -23,12 +23,22 @@ namespace FAPlutoRover
 
         public void StepYBackward()
         {
-            Y++;
+            Y--;
         }
 
         public void StepYForward()
         {
             Y++;
+        }
+
+        public void StepXForward()
+        {
+            X++;
+        }
+
+        public void StepXBackward()
+        {
+            X--;
         }
     }
 }

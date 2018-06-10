@@ -12,7 +12,9 @@ namespace FAPlutoRover
         int Y { get; }
 
         void StepYBackward();
-
         void StepYForward();
+
+        void StepXForward();
+        void StepXBackward();
     }
 }

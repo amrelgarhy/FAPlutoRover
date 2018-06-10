@@ -69,6 +69,7 @@ namespace FAPlutoRover.Test
 
             Assert.IsInstanceOfType(updatedDirection, typeof(North));
         }
+       
         #endregion
 
         #region East Tests

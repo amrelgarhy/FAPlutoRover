@@ -39,7 +39,7 @@ namespace FAPlutoRover
 
         public void Backward()
         {
-            throw new NotImplementedException();
+            Direction.MoveBackward();
         }
     }
 }

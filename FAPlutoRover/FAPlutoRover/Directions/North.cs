@@ -8,11 +8,16 @@ namespace FAPlutoRover.Directions
 {
     public class North : IDirection
     {
-        private ISurface _surface;
+        private readonly ISurface _surface;
 
         public North(ISurface surface)
         {
             _surface = surface;
+        }
+
+        public void MoveBackward()
+        {
+            _surface.StepYBackward();
         }
 
         public void MoveForward()

@@ -45,7 +45,7 @@ namespace FAPlutoRover.Test
         }
 
         [TestMethod]
-        public void PlutoReover_FirstMoveForward_XZeroY1()
+        public void PlutoRover_FirstMoveForward_XZeroY1()
         {
             var rover = new PlutoRover(new GridSurface(100));
 
@@ -56,7 +56,7 @@ namespace FAPlutoRover.Test
         }
 
         [TestMethod]
-        public void PlutoReover_FirstMoveForwardThenLeft_XZeroY1FaceWest()
+        public void PlutoRover_FirstMoveForwardThenLeft_XZeroY1FaceWest()
         {
             var rover = new PlutoRover(new GridSurface(100));
 
@@ -69,7 +69,7 @@ namespace FAPlutoRover.Test
         }
 
         [TestMethod]
-        public void PlutoReover_FirstMoveForwardThenBackward_XZeroY0FaceNorth()
+        public void PlutoRover_FirstMoveForwardThenBackward_XZeroY0FaceNorth()
         {
             var rover = new PlutoRover(new GridSurface(100));
 
@@ -80,5 +80,20 @@ namespace FAPlutoRover.Test
             Assert.AreEqual(rover.Y, 0);
             Assert.IsInstanceOfType(rover.Direction, typeof(North));
         }
+
+
+        [TestMethod]
+        public void PlutoRover_FirstTurnLeftMoveBackward_X1Y0FaceWest()
+        {
+            var rover = new PlutoRover(new GridSurface(100));
+
+            rover.TurnLeft();
+            rover.Backward();
+
+            Assert.AreEqual(rover.X, 1);
+            Assert.AreEqual(rover.Y, 0);
+            Assert.IsInstanceOfType(rover.Direction, typeof(West));
+        }
+
     }
 }
