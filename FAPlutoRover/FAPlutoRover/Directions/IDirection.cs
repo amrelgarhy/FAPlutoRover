@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace FAPlutoRover.Directions
 {
-    public interface IDirection
+    public  interface IDirection
     {
-
+        IDirection TurnLeft();
+        IDirection TurnRight();
     }
 }

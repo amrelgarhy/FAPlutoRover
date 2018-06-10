@@ -8,5 +8,18 @@ namespace FAPlutoRover.Directions
 {
     public class East : IDirection
     {
+        public East(ISurface surface)
+        {
+        }
+
+        public IDirection TurnLeft()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IDirection TurnRight()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
