@@ -48,7 +48,7 @@
     <Compile Include="GridSurface.cs" />
     <Compile Include="IRover.cs" />
     <Compile Include="ISurface.cs" />
-    <Compile Include="Rover.cs" />
+    <Compile Include="PlutoRover.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

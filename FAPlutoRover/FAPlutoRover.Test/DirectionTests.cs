@@ -5,14 +5,14 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace FAPlutoRover.Test
 {
     [TestClass]
-    public class Directions
+    public class DirectionTests
     {
         ISurface surface;
 
         [TestInitialize]
         public void Init()
         {
-            surface = new GridSurface();
+            surface = new GridSurface(100);
         }
 
         #region North Tests
