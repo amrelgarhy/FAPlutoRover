@@ -14,8 +14,12 @@ namespace FAPlutoRover
         private readonly int _size;
 
 
+        private readonly List<Obstacle> _obstacles;
 
-
+        public SphereGridSurface(int size, List<Obstacle> obstacles) : this(size)
+        {
+            _obstacles = obstacles;
+        }
 
         public SphereGridSurface(int size)
         {
@@ -24,11 +28,28 @@ namespace FAPlutoRover
             _size = size;
         }
 
+        private bool HasObstacle()
+        {
+            foreach (Obstacle obstacle in _obstacles)
+            {
+                if (obstacle.X == X && obstacle.Y == Y)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public void StepYBackward()
         {
             Y--;
             if (Y < 0)
                 Y = _size;
+
+            if (HasObstacle())
+            {
+                StepYForward();
+            }
         }
 
         public void StepYForward()
@@ -36,6 +57,11 @@ namespace FAPlutoRover
             Y++;
             if (Y > _size)
                 Y = 0;
+
+            if (HasObstacle())
+            {
+                StepYBackward();
+            }
         }
 
         public void StepXForward()
@@ -43,6 +69,11 @@ namespace FAPlutoRover
             X++;
             if (X > _size)
                 X = 0;
+
+            if (HasObstacle())
+            {
+                StepXBackward();
+            }
         }
 
         public void StepXBackward()
@@ -50,6 +81,11 @@ namespace FAPlutoRover
             X--;
             if (X < 0)
                 X = _size;
+
+            if (HasObstacle())
+            {
+                StepXForward();
+            }
         }
     }
 }

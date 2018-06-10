@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace FAPlutoRover.Test
@@ -127,6 +128,20 @@ namespace FAPlutoRover.Test
 
             Assert.AreEqual(1, grid.Y);
             Assert.AreEqual(1, grid.X);
+        }
+        #endregion
+
+        #region Obstacles Test
+        [TestMethod]
+        public void Sphere_MoveToAnObstacle_ReturnToLastPoint()
+        {
+            var grid = new SphereGridSurface(100, new List<Obstacle> { new Obstacle(1, 1) });
+
+            grid.StepYForward();
+            grid.StepXForward();
+
+            Assert.AreEqual(1, grid.Y);
+            Assert.AreEqual(0, grid.X);
         }
         #endregion
 
