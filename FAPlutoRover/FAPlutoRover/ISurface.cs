@@ -8,5 +8,11 @@ namespace FAPlutoRover
 {
     public interface ISurface
     {
+        int X { get; }
+        int Y { get; }
+
+        void StepYBackward();
+
+        void StepYForward();
     }
 }

@@ -8,8 +8,8 @@ namespace FAPlutoRover
 {
     public class GridSurface : ISurface
     {
-        public int X { get; set; }
-        public int Y { get; set; }
+        public int X { get; private set; }
+        public int Y { get; private set; }
         
         private readonly int _size;
 
@@ -19,6 +19,16 @@ namespace FAPlutoRover
             X = 0;
             Y = 0;
             _size = size;
+        }
+
+        public void StepYBackward()
+        {
+            Y++;
+        }
+
+        public void StepYForward()
+        {
+            Y++;
         }
     }
 }

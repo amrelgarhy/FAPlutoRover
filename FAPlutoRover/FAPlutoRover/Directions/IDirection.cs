@@ -10,5 +10,6 @@ namespace FAPlutoRover.Directions
     {
         IDirection TurnLeft();
         IDirection TurnRight();
+        void MoveForward();
     }
 }

@@ -10,17 +10,36 @@ namespace FAPlutoRover
     public class PlutoRover : IRover
     {
         public IDirection Direction { get; set; }
+        
         private readonly ISurface _surface;
+
+        public int X { get { return _surface.X; } }
+        public int Y { get { return _surface.Y; } }
 
         public PlutoRover(ISurface surface)
         {
-            Direction = new North(_surface);
             _surface = surface;
+            Direction = new North(surface);
         }
 
         public void TurnLeft()
         {
             Direction = Direction.TurnLeft();
+        }
+
+        public void TurnRight()
+        {
+            Direction = Direction.TurnRight();
+        }
+
+        public void Forward()
+        {
+            Direction.MoveForward();
+        }
+
+        public void Backward()
+        {
+            throw new NotImplementedException();
         }
     }
 }

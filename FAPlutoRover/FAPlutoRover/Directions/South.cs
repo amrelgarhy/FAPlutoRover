@@ -15,6 +15,11 @@ namespace FAPlutoRover.Directions
             _surface = surface;
         }
 
+        public void MoveForward()
+        {
+            _surface.StepYBackward();
+        }
+
         public IDirection TurnLeft()
         {
             return new East(_surface);
