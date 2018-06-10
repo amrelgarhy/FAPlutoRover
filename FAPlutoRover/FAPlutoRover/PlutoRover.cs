@@ -1,4 +1,5 @@
-﻿using FAPlutoRover.Directions;
+﻿using FAPlutoRover.Commands;
+using FAPlutoRover.Directions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,6 +41,13 @@ namespace FAPlutoRover
         public void Backward()
         {
             Direction.MoveBackward();
+        }
+
+        public void ExecuteCommand(string commandText)
+        {
+            var command = new Forward();
+
+            command.Execute(this);
         }
     }
 }

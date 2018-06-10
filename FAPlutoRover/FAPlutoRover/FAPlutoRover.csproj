@@ -40,6 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\Backward.cs" />
+    <Compile Include="Commands\Forward.cs" />
+    <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="Commands\Left.cs" />
+    <Compile Include="Commands\Right.cs" />
     <Compile Include="Directions\East.cs" />
     <Compile Include="Directions\IDirection.cs" />
     <Compile Include="Directions\North.cs" />
@@ -51,5 +56,6 @@
     <Compile Include="PlutoRover.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

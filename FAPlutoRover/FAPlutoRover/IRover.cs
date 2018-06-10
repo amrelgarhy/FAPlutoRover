@@ -8,5 +8,13 @@ namespace FAPlutoRover
 {
     public interface IRover
     {
+        void TurnLeft();
+
+        void TurnRight();
+
+        void Forward();
+
+        void Backward();
+        
     }
 }

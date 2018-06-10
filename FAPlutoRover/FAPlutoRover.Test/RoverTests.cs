@@ -95,5 +95,43 @@ namespace FAPlutoRover.Test
             Assert.IsInstanceOfType(rover.Direction, typeof(West));
         }
 
+
+        [TestMethod]
+        public void PlutoRover_Move2Forward_TurnRight_Move2Forward_TurnRight_Move2Forward_TurnRight_Move2Forward_TurnRight__FaceNorthX0Y0()
+        {
+            var rover = new PlutoRover(new GridSurface(100));
+
+            rover.Forward();
+            rover.Forward();
+            rover.TurnRight();
+
+            rover.Forward();
+            rover.Forward();
+            rover.TurnRight();
+
+            rover.Forward();
+            rover.Forward();
+            rover.TurnRight();
+
+            rover.Forward();
+            rover.Forward();
+            rover.TurnRight();
+
+            Assert.AreEqual(0, rover.X);
+            Assert.AreEqual(0, rover.Y);
+            Assert.IsInstanceOfType(rover.Direction, typeof(North));
+        }
+
+
+        #region Commands
+        public void PlutoRoverCommand_F_Yis1()
+        {
+            var rover = new PlutoRover(new GridSurface(100));
+
+            rover.ExecuteCommand("F");
+
+            Assert.AreEqual(1, rover.Y);
+        }
+        #endregion
     }
 }
