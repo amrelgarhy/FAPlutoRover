@@ -45,9 +45,13 @@ namespace FAPlutoRover
 
         public void ExecuteCommand(string commandText)
         {
-            var command = new Forward();
+            ICommand command;
 
-            command.Execute(this);
+            if (commandText=="F")
+            {
+                command = new Forward();
+                command.Execute(this);
+            }
         }
     }
 }

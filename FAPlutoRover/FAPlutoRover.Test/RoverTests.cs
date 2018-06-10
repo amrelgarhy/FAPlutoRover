@@ -124,6 +124,7 @@ namespace FAPlutoRover.Test
 
 
         #region Commands
+        [TestMethod]
         public void PlutoRoverCommand_F_Yis1()
         {
             var rover = new PlutoRover(new GridSurface(100));
@@ -131,6 +132,17 @@ namespace FAPlutoRover.Test
             rover.ExecuteCommand("F");
 
             Assert.AreEqual(1, rover.Y);
+        }
+
+        [TestMethod]
+        public void PlutoRoverCommand_FFB_Y1X0()
+        {
+            var rover = new PlutoRover(new GridSurface(100));
+
+            rover.ExecuteCommand("FFB");
+
+            Assert.AreEqual(1, rover.Y);
+            Assert.AreEqual(0, rover.X);
         }
         #endregion
     }
