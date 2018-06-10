@@ -12,5 +12,10 @@ namespace FAPlutoRover.Commands
         {
             throw new NotImplementedException();
         }
+
+        public bool IsMatched(char commandChar)
+        {
+            return commandChar == 'B';
+        }
     }
 }

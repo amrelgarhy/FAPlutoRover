@@ -9,5 +9,7 @@ namespace FAPlutoRover.Commands
     public interface ICommand
     {
         void Execute(IRover rover);
+
+        bool IsMatched(char commandChar);
     }
 }

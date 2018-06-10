@@ -52,6 +52,7 @@
     <Compile Include="DirectionTests.cs" />
     <Compile Include="RoverTests.cs" />
     <Compile Include="SurfaceTests.cs" />
+    <Compile Include="CommandParserTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -12,5 +12,10 @@ namespace FAPlutoRover.Commands
         {
             rover.Forward();
         }
+
+        public bool IsMatched(char commandChar)
+        {
+            return commandChar == 'F';
+        }
     }
 }

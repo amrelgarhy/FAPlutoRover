@@ -40,7 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\AllCommands.cs" />
     <Compile Include="Commands\Backward.cs" />
+    <Compile Include="Commands\CommandParser.cs" />
     <Compile Include="Commands\Forward.cs" />
     <Compile Include="Commands\ICommand.cs" />
     <Compile Include="Commands\Left.cs" />
