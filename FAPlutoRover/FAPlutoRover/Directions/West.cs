@@ -17,12 +17,12 @@ namespace FAPlutoRover.Directions
 
         public IDirection TurnLeft()
         {
-            throw new NotImplementedException();
+            return new South(_surface);
         }
 
         public IDirection TurnRight()
         {
-            throw new NotImplementedException();
+            return new North(_surface);
         }
     }
 }

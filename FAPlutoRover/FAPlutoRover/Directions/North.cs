@@ -22,7 +22,7 @@ namespace FAPlutoRover.Directions
 
         public IDirection TurnRight()
         {
-            throw new NotImplementedException();
+            return new East(_surface);
         }
     }
 }
