@@ -86,5 +86,49 @@ namespace FAPlutoRover.Test
         }
         #endregion
 
+        #region sphere grid surface
+        [TestMethod]
+        public void Sphere_IncreaseYMoreThanSizeBy1_Y0()
+        {
+            var grid = new SphereGridSurface(2);
+
+            grid.StepYForward();
+            grid.StepYForward();
+            grid.StepYForward();
+
+            Assert.AreEqual(0, grid.Y);
+        }
+
+
+        [TestMethod]
+        public void Sphere_IncreaseYMoreThanSizeBy2_Y1()
+        {
+            var grid = new SphereGridSurface(2);
+
+            grid.StepYForward();
+            grid.StepYForward();
+            grid.StepYForward();
+            grid.StepYForward();
+
+            Assert.AreEqual(1, grid.Y);
+        }
+
+        [TestMethod]
+        public void Sphere_IncreaseYMoreThanSizeBy2AndXIncrease1_Y1X1()
+        {
+            var grid = new SphereGridSurface(2);
+
+            grid.StepYForward();
+            grid.StepYForward();
+            grid.StepYForward();
+            grid.StepYForward();
+
+            grid.StepXForward();
+
+            Assert.AreEqual(1, grid.Y);
+            Assert.AreEqual(1, grid.X);
+        }
+        #endregion
+
     }
 }

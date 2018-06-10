@@ -144,6 +144,61 @@ namespace FAPlutoRover.Test
             Assert.AreEqual(1, rover.Y);
             Assert.AreEqual(0, rover.X);
         }
+
+        [TestMethod]
+        public void PlutoRoverCommand_FFRFF_Y2X2East()
+        {
+            var rover = new PlutoRover(new GridSurface(100));
+
+            rover.ExecuteCommand("FFRFF");
+
+            Assert.AreEqual(2, rover.Y);
+            Assert.AreEqual(2, rover.X);
+
+            Assert.IsInstanceOfType(rover.Direction, typeof(East));
+        }
+        #endregion
+
+        #region sphere grid
+        [TestMethod]
+        public void PlutoRoverCommandWithSphereGrid_FFRFF_Y2X2East()
+        {
+            var rover = new PlutoRover(new SphereGridSurface(100));
+
+            rover.ExecuteCommand("FFRFF");
+
+            Assert.AreEqual(2, rover.Y);
+            Assert.AreEqual(2, rover.X);
+
+            Assert.IsInstanceOfType(rover.Direction, typeof(East));
+        }
+
+        [TestMethod]
+        public void PlutoRoverCommandWithSphereGrid_FFFRFFF_ReturnTo00East()
+        {
+            var rover = new PlutoRover(new SphereGridSurface(2));
+
+            rover.ExecuteCommand("FFFRFFF");
+
+            Assert.AreEqual(0, rover.Y);
+            Assert.AreEqual(0, rover.X);
+
+            Assert.IsInstanceOfType(rover.Direction, typeof(East));
+        }
+
+        [TestMethod]
+        public void PlutoRoverCommandWithSphereGrid_FFFFRFFFF_ShouldNotReturnTo00East()
+        {
+            var rover = new PlutoRover(new SphereGridSurface(2));
+
+            rover.ExecuteCommand("FFFFRFFFF");
+
+            Assert.AreNotEqual(0, rover.Y);
+            Assert.AreNotEqual(0, rover.X);
+
+            Assert.IsInstanceOfType(rover.Direction, typeof(East));
+        }
         #endregion
     }
+
 }

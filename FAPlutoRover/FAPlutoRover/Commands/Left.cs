@@ -10,7 +10,7 @@ namespace FAPlutoRover.Commands
     {
         public void Execute(IRover rover)
         {
-            throw new NotImplementedException();
+            rover.TurnLeft();
         }
 
         public bool IsMatched(char commandChar)

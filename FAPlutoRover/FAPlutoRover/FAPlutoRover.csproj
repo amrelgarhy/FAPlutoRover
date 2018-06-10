@@ -57,6 +57,7 @@
     <Compile Include="ISurface.cs" />
     <Compile Include="PlutoRover.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SphereGridSurface.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
